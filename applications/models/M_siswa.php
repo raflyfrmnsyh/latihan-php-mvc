@@ -2,25 +2,24 @@
 
 class M_siswa{  
 
-    private $dbh;
-    private $stmt;
+    private $table = 'tb_siswa';
+    private $db;
 
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=db_siswa_r1';
-
-        try{
-            $this->dbh = new PDO($dsn, 'root', '');
-        }catch(PDOException $e){
-            die($e->getMessage());
-        }
+        $this->db = new Database;
     }
 
     public function getAllSiswa()
     {
-        $this->stmt = $this->dbh->prepare('SELECT * FROM tb_siswa');
-        $this->stmt->execute();
+       $this->db->query('SELECT * FROM ' . $this->table);
+       return $this->db->resultSet();
+    }
 
-        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function getSiswaById($id)
+    {
+       $this->db->query('SELECT * FROM ' . $this->table .  " WHERE id= :id");
+       $this->db->bind('id', $id);
+       return $this->db->single();
     }
 }

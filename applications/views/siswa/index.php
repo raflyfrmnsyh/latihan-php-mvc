@@ -33,7 +33,7 @@
                             <td><?php echo $dat['email']; ?></td>
                             <td><?php echo $dat['organisasi']; ?></td>
                             <td class="d-flex align-items-center justify-content-center">
-                                <a href="#" class="btn btn-sm btn-primary ml-2 mr-2">Edit</a>
+                                <a href="<?= base_url; ?>siswa/detail/<?= $dat['id']?>" class="btn btn-sm btn-success ml-2 mr-2">Detail</a>
                                 <a href="#" class="btn btn-sm btn-danger ml-2 mr-2">Hapus</a>
                             </td>
                         </tr>
