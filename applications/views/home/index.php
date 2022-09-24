@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Home</title>
-</head>
-<body>
-
-    <h2>
-        Ini halaman home
-    </h2>
-    
-</body>
-</html>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3>Selamat Datang, <?php echo $data['nama'];?></h3>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>

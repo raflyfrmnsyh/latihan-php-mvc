@@ -5,4 +5,9 @@ class Controller{
     {
         require_once '../applications/views/' . $view . '.php';
     }
+    public function model($model)
+    {
+        require_once '../applications/models/' . $model . '.php';
+        return new $model;
+    }
 }
